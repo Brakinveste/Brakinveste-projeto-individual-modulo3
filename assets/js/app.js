@@ -86,7 +86,7 @@ const createRow = (merchandise) => {
   <hr class="hr-tipo4" />
   <div class="primeiro">
     <p class="primeiro-sinal">${sinalMaisOuMenos}</p>
-    <p class="primeiro-lorem">${merchandise.nome}</p>      
+    <p class="primeiro-tex">${merchandise.nome}</p>      
     <p class="primeiro-valor">R$ ${merchandise.valor}</p>
   </div> 
   `;
