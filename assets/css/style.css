@@ -2,12 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
   font-family: "Lato", sans-serif;
 }
 
-.nova-transacao,
-.separador {
+.nova-transacao, .separador {
   display: none;
 }
 
@@ -15,7 +13,7 @@
   text-align: center;
   margin-top: 40px;
   color: #383838;
-  font-family: "Inter", sans-serif;
+
 }
 
 .header {
@@ -72,7 +70,6 @@
   color: #fff;
 }
 
-
 .menu-celular {
   display: flex;
   flex-direction: column;
@@ -84,7 +81,6 @@
   width: 90%;
   height: 100vh;
 }
-
 
 .main {
   display: flex;
@@ -296,8 +292,7 @@
   .limpar-dados:hover, .cadastro-transacoes:hover {
     opacity: 0.8;
   }
-  .limpar-dados:active,
-  .cadastro-transacoes:active {
+  .limpar-dados:active, .cadastro-transacoes:active {
     opacity: 0.6;
   }
 
