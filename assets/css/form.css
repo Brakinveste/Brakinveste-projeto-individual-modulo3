@@ -13,7 +13,7 @@ input::placeholder {
 .tipo-transacao {
   display: block;
   font-size: 14px;
-  height: 22.22px;
+  height: 22px;
   color: #333;
 }
 #tipo-select {
@@ -29,7 +29,7 @@ input::placeholder {
 
 .tipo-mercadoria {
   display: block;
-  height: 22.22px;
+  height: 22px;
   font-size: 14px;
 }
 #tipo_mercadoria {
@@ -44,7 +44,7 @@ input::placeholder {
 .tipo-valor {
   display: block;
   font-size: 14px;
-  height: 22.22px;
+  height: 22px;
 }
 #tipo_valor {
   width: 100%;
@@ -58,12 +58,12 @@ input::placeholder {
 .inputBtn {
   width: 100%;
   background: #333333;
-  border-radius: 4px;
+  border-width: 0;
+  border-radius:  4px;
   color: #fff;
-  height: 32px;
+  height: 30px;
   font-size: 14px;
-  font-family: "Inter";
-  margin-bottom: 28.56px;
+  margin-bottom: 28px;
 }
 
 hr {

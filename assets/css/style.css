@@ -230,8 +230,7 @@
     flex-direction: row;
   }
 
-  .input-transacao,
-  .input-valor {
+  .input-transacao, .input-valor {
     flex-grow: 1;
   }
   .input-mercadoria {
