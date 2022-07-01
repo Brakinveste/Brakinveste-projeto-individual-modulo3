@@ -27,11 +27,11 @@
           <img src="./assets/img/menuHamburguer.svg" alt="menu hamburguer" class="hamburguer" onclick="abrirMenu()"/>
 
           <div class="menu">
-            <img src="./assets/img/x.svg" alt="ícone X para fechar" class="vector-x" onclick="fecharMenu()"/>
+            <img src="./assets/img/x.svg" alt="ícone X para fechar" class="vector-x" onclick="abrirMenu()"/>
             <a href="#" class="cadastro-transacoes"> Cadastro de transações </a>
            
             <div class="separador">|</div>
-            <a href="#" class="limpar-dados" onclick="limpaLocalStorage()"> Limpar dados </a>
+            <a href="javascript:void(0)" class="limpar-dados" onclick="limpaLocalStorage()"> Limpar dados </a>
           </div>
         </div>
       </header>
@@ -39,7 +39,7 @@
   
       <main class="main">
         <div class="retangulo-tablet">
-          <form id="form" class="form" onsubmit="saveForm()" autocomplete="off">
+          <form id="form" class="form" onsubmit="saveForm(event)" autocomplete="off">
             <p class="nova-transacao"> Nova transação </p>
 
             <div class="display-flex-tablet">
@@ -59,11 +59,11 @@
 
               <div class="input-valor">
                 <label class="tipo-valor" for="tipo_valor"> Valor </label>
-                <input onkeyup="testaCampoValor()" name="valor" type="text" id="tipo_valor" placeholder="R$ 0,00" required />
+                <input onkeyup="testaCampoValor()" onkeydown="testaCampoValor()" name="valor" type="text" id="tipo_valor" placeholder="R$ 0,00" required />
               </div>
             </div>
 
-            <button class="inputBtn" type="submit"> Adicionar transação </button>
+            <button class="inputBtn" > Adicionar transação </button>
             <hr id="hr" />
           </form>
         </div>

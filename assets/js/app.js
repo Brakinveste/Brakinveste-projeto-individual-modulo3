@@ -40,7 +40,9 @@ const isValidFields = () => {
   return document.getElementById("form").reportValidity();
 };
 
-const saveForm = () => {
+const saveForm = (eventoForm) => {
+
+  eventoForm.preventDefault();
   
   if (isValidFields()) {
     const merchandise = {
@@ -65,41 +67,60 @@ const createRow = (merchandise) => {
   let frame = document.querySelector(".frame");
   frame.style.display = "block";
   
+ 
+
   valorComReplace = sinalMaisOuMenos + merchandise.valor;
   valorComReplace = Number(valorComReplace
     .replaceAll(".", "")
     .replaceAll(",", "."));
   valorTotalFinal.push(valorComReplace);
   let reducedValue = valorTotalFinal.reduce((total, atual) => total + atual);
-  
+
+
+   
+
   let valorToLocaleString;
   valorToLocaleString = reducedValue.toFixed(2);
   Math.sign(reducedValue) == -1
-    ? (valorToLocaleString = -valorToLocaleString) // Fiz isso pro 1º valor não mostrar o sinal "negativo" na tela num caso de "compra"
+    ? (valorToLocaleString = -valorToLocaleString) 
     : valorToLocaleString;
+ 
+
   valorToLocaleString = parseFloat(valorToLocaleString).toLocaleString(
     "pt-BR",
     { minimumFractionDigits: 2, style: "currency", currency: "BRL" }
   );
+  
+
   
   newDiv.innerHTML += `
   <hr class="hr-tipo4" />
   <div class="primeiro">
     <p class="primeiro-sinal">${sinalMaisOuMenos}</p>
     <p class="primeiro-tex">${merchandise.nome}</p>      
-    <p class="primeiro-valor">R$ ${merchandise.valor}</p>
+    <p class="primeiro-valor"> ${merchandise.valor}</p>
   </div> 
   `;
   
+ 
+
   let extratos = document.querySelector(".extratos");
   extratos.insertAdjacentElement("afterend", newDiv);
-  
+ 
   let total = document.querySelector(".total-valor");
   total.textContent = `${valorToLocaleString}`;
   
   let linhaLucroOuDespesa = document.querySelector(".lucro");
   linhaLucroOuDespesa.textContent = `${
-    Math.sign(reducedValue) == -1 ? "[Despesa]" : "[Lucro]"
+  
+  /*
+    if (Math.sign(reducedValue) == -1) {
+    "[despesa]"} else if (Math.sign(reducedValue) === 0) {
+      "[ ]"
+    } else {"[Lucro]"}
+    */
+  Math.sign(reducedValue) == -1 ? "[Despesa]" : "[Lucro]"
+  
   }`;
 };
 
@@ -137,16 +158,19 @@ function abrirMenu() {
   const mediaTablet = window.matchMedia("(min-width: 768px)");
 
   mediaTablet.matches
-    ? botaoMenuX.classList.add("menu-tablet")
-    : botaoMenuX.classList.add("menu-celular");
+    ? botaoMenuX.classList.toggle("menu-tablet")
+    : botaoMenuX.classList.toggle("menu-celular");
 }
 
+/*
 function fecharMenu() {
   let botaoMenuX = document.querySelector(".menu");
 
   botaoMenuX.classList.remove("menu-celular");
   botaoMenuX.classList.remove("menu-tablet");
 }
+*/
+
 
 function testaCampoValor() {
   let elemento = document.getElementById("tipo_valor");
