@@ -42,7 +42,7 @@ const isValidFields = () => {
 
 const saveForm = (eventoForm) => {
 
-  eventoForm.preventDefault();
+ eventoForm.preventDefault();
   
   if (isValidFields()) {
     const merchandise = {
@@ -53,6 +53,7 @@ const saveForm = (eventoForm) => {
 
     createMerchandise(merchandise);
     clearFields(); 
+    updateScreen();
   }
 };
 
@@ -98,7 +99,7 @@ const createRow = (merchandise) => {
   <div class="primeiro">
     <p class="primeiro-sinal">${sinalMaisOuMenos}</p>
     <p class="primeiro-tex">${merchandise.nome}</p>      
-    <p class="primeiro-valor"> ${merchandise.valor}</p>
+    <p class="primeiro-valor">R$ ${(valorComReplace).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
   </div> 
   `;
   
@@ -162,14 +163,6 @@ function abrirMenu() {
     : botaoMenuX.classList.toggle("menu-celular");
 }
 
-/*
-function fecharMenu() {
-  let botaoMenuX = document.querySelector(".menu");
-
-  botaoMenuX.classList.remove("menu-celular");
-  botaoMenuX.classList.remove("menu-tablet");
-}
-*/
 
 
 function testaCampoValor() {
