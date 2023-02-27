@@ -31,6 +31,7 @@ input::placeholder {
   display: block;
   height: 22px;
   font-size: 14px;
+  
 }
 #tipo_mercadoria {
   width: 100%;
@@ -39,12 +40,19 @@ input::placeholder {
   box-sizing: border-box;
   border-radius: 4px;
   margin-bottom: 20px;
+  padding-left: 6px;
 }
+
+#tipo_mercadoria::placeholder {
+  padding-left: 6px;
+}
+
 
 .tipo-valor {
   display: block;
   font-size: 14px;
   height: 22px;
+  
 }
 #tipo_valor {
   width: 100%;
@@ -53,7 +61,14 @@ input::placeholder {
   box-sizing: border-box;
   border-radius: 4px;
   margin-bottom: 20px;
+  padding-left: 6px;
+  
 }
+
+#tipo_valor::placeholder {
+  padding-left: 6px;
+}
+
 
 .inputBtn {
   width: 100%;
